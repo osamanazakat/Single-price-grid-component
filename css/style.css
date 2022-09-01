@@ -1,0 +1,157 @@
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-gray);
+  font-size: 1em;
+  font-family: 'Karla', sans-serif;
+}
+
+.cards {
+  margin: 7em auto;
+  padding: 0 12em;
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 13em 1fr;
+}
+
+.card {
+  background-color: #fff;
+  padding: 2em;
+}
+
+.first-card {
+  grid-area: 1 / 1 / span 1 / span 2;
+  border-top-left-radius: .8em;
+  border-top-right-radius: .8em;
+}
+
+.first-card h1 {
+  color: var(--cyan);
+  font-weight: 600;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.first-card-highlight {
+  color: var(--bright-yellow);
+  margin-bottom: .8em;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.first-card-paragraph {
+  color: var(--grayish-blue);
+}
+
+.second-card {
+  color: #fff;
+  background-color: var(--cyan);
+  grid-area: 2 / 1 / span 1 / span 1;
+  border-bottom-left-radius: .8em;
+}
+
+.second-card h2 {
+  font-weight: 600;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  margin-bottom: .8em;
+}
+
+.price h1 {
+  margin-right: .5em;
+}
+
+.price p {
+  color: var(--light-gray);
+}
+
+.btn {
+  margin-top: 2em;
+  text-decoration: none;
+  border: none;
+  padding: 1em 6em;
+  background-color: var(--bright-yellow);
+  border-radius: .5em;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.btn:hover {
+  color: var(--grayish-blue);
+}
+
+.third-card {
+  background-color: var(--cyan);
+  opacity: 70%;
+  grid-area: 2 / 2 / span 1 / span 1;
+  border-bottom-right-radius: .8em;
+}
+
+.third-card h2 {
+  color: #fff;
+  margin-bottom: 1em;
+  font-size: 1.3em;
+}
+
+.third-card p {
+  color: var(--light-gray);
+}
+
+@media (max-width: 800px) {
+  .cards {
+    margin: 3em auto;
+    padding: 0 3.3em;
+  }
+}
+
+@media (max-width: 500px) {
+  .cards {
+    margin: 3em auto;
+    padding: 0 1.3em;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .first-card {
+    grid-area: 1 / 1;
+    padding-right: 6em;
+  }
+
+  .first-card-paragraph {
+    line-height: 1.5;
+  }
+
+  .second-card {
+    grid-area: 2 / 1;
+    border-radius: 0;
+  }
+
+  .third-card {
+    grid-area: 3 / 1;
+    padding-right: 12em;
+    border-bottom-left-radius: .8em;
+  }
+
+  .third-card p {
+    line-height: 1.5;
+  }
+}
